@@ -1,4 +1,4 @@
-"""Register-machine"""
+"""REGISTER MACHINE"""
 
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -25,8 +25,8 @@ def delete_lists():
     del CARDS[:]
 
 def press_enter():
-    """THIS SAYS 5TO THE USER PRESS ENTER"""
-    raw_input("\n\nPress Enter")
+    """THIS SAYS TO THE USER PRESS ENTER"""
+    raw_input("\n\nPress ENTER button to return to main menu")
 
 def product_isalpha(product):
     """THIS VERIFIES THE VALID NAME OF THE PRODUCT"""
@@ -49,18 +49,18 @@ def valid_name():
         product_lower = minuscule(product)
         valid_product = product_isalpha(product)
         if valid_product == False:
-            print "Insert Valid Option please"
+            print "\nInsert Valid Option please"
     return product_lower
 
 def the_price():
     """THIS SAVES THE PRICE"""
     while True:
-        price = raw_input("Enter the price: ")
+        price = raw_input("\nEnter the price: ")
         try:
             price = float(price)
             return price
         except ValueError:
-            print "Insert only numbers"
+            print "\nInsert only numbers please"
     return price
 
 def add_prod(product, price):
@@ -84,18 +84,18 @@ def articles_with_price():
             main_menu()
         else:
             clear()
-            print "Insert only y/n please"
+            print "\nInsert only y/n please"
 
 def product_sell():
     """THIS INSERTS THE PRODUCT TO BUY"""
-    product = raw_input("\n - ")
+    product = raw_input("\n -- ")
     buy = minuscule(product)
     return buy
 
 def done():
     """THIS VERIFIES IF THE USER NOT BUYS"""
     if EXISTENT == []:
-        print "\nCan't generate the bill because You have not bought"
+        print "\nError has not made a purchase"
         press_enter()
         clear()
         show_products()
@@ -130,7 +130,7 @@ def sell_product():
 
 def show_products():
     """THIS SHOWS THE PRODUCTS IN SALE"""
-    print "These are the products in sale"
+    print "the products on sale are"
     for key, value in PRODUCTS.iteritems():
         print "%s: Q%.2f" % (key, value)
 
@@ -147,12 +147,12 @@ def ask_of_user():
             clear()
             sell_product()
         else:
-            print "Election invalid"
+            print "\nElection invalid"
 
 def dic_next():
     """VERIFIES IF THE DICTIONARY IS EMPTY"""
     if PRODUCTS == {}:
-        print "\n**No products availabe**" 
+        print "\nNo products availabe" 
         press_enter()
         clear()
         main_menu()
@@ -211,7 +211,8 @@ def bill():
     print "The tax is:---------------- Q%.2f" % iva
     print "The total to pay is:------- Q%.2f" % total
     print "-------------------------------------"
-    print "\n\n---Thank you for shopping with us---"
+    print "\n\n---Thank you for your purchase!!---"
+    print "        ---Come back soon---           "
 
 def main_menu():
     """THIS SHOWS THE MAIN MENU"""
@@ -223,7 +224,7 @@ def main_menu():
     print "__________________________________"
     answer = True
     while answer == True:
-        enter = raw_input(" - ")
+        enter = raw_input("\n -- ")
         if enter == "1":
             clear()
             articles_with_price()
@@ -235,7 +236,7 @@ def main_menu():
             sys.exit() 
         else:
             clear()
-            print "*Election invalid, choose a valid option"
+            print "\Invalid Option"
             main_menu()
 
 if __name__ == "__main__":
