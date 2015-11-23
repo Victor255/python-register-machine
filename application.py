@@ -1,7 +1,7 @@
 """REGISTER MACHINE"""
 
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*
 
 import os
 import sys
@@ -16,6 +16,8 @@ def clear():
     """THIS CLEANS THE SCREEN"""
     if os.name == "posix":
         os.system("clear")
+    elif os.name == ("nt",):
+        os.system("cls")
 clear()
 
 def press_enter():
@@ -80,6 +82,7 @@ def articles_with_price():
             price = the_price()
             add_prod(product, price)
         elif other == "n":
+            clear()
             main_menu()
         else:
             print "\nInsert only y/n please"
@@ -112,14 +115,14 @@ def sell_product():
 
 def show_products():
     """THIS SHOWS THE PRODUCTS IN SALE"""
-    print "the products on sale are"
+    print "The products available are"
     for key, value in PRODUCTS.iteritems():
         print "%s: Q%.2f" % (key, value)
 
 def ask_of_user():
     """THIS ASKS TO THE USER IF WANTS TO SEE THE PRODUCTS"""
     while True:
-        question = raw_input("Do you want to see the products in sale? y/n ")
+        question = raw_input("Do you want to see the products available? y/n ")
         question = question.lower()
         if question == "y":
             clear()
