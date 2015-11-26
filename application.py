@@ -91,7 +91,7 @@ def articles_with_price():
 
 def product_sell():
     """THIS INSERTS THE PRODUCT TO BUY"""
-    product = raw_input("\n -- ")
+    product = raw_input("\n -- ") #asks the user to enter the product
     buy = minuscule(product)
     return buy
 
@@ -119,7 +119,7 @@ def show_products():
     """THIS SHOWS THE PRODUCTS IN SALE"""
     print "The products available are"
     for key, value in PRODUCTS.iteritems():
-        print "%s: Q%.2f" % (key, value)
+        print "%s: Q%.2f" % (key, value) #shows in screen the products available
 
 def ask_of_user():
     """THIS ASKS TO THE USER IF WANTS TO SEE THE PRODUCTS"""
@@ -154,7 +154,7 @@ def done():
 
 def dic_next():
     """VERIFIES IF THE DICTIONARY IS EMPTY"""
-    if PRODUCTS == {}:
+    if PRODUCTS == {}: #checks whether there is products available
         print "\nThere is no products to show"
         press_enter()
         clear()
