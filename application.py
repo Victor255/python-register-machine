@@ -24,6 +24,7 @@ def press_enter():
     """THIS SAYS TO THE USER PRESS ENTER"""
     raw_input("\n\nPress ENTER button to return to main menu")
 
+#Test 1 produc_isalpha
 def product_isalpha(product):
     """THIS VERIFIES THE VALID NAME OF THE PRODUCT"""
     if product.isalpha(): #this verifies if the product entered is alphabetic
@@ -37,6 +38,7 @@ def delete_lists():
     del PRICE[:]
     del CARDS[:]
 
+#Test 2 product isalpha
 def minuscule(product):
     """THIS CONVERTS THE PRODUCT IN MINUSCULE"""
     product = product.lower()
@@ -51,7 +53,7 @@ def valid_name():
     clear()
     valid_product = False
     while valid_product == False:
-        product = raw_input("Enter The product: ") #This asks entered the product
+        product = raw_input("\n--Enter The product: ") #This asks entered the product
         product_lower = minuscule(product)
         valid_product = product_isalpha(product)
         if valid_product == False:
@@ -61,7 +63,7 @@ def valid_name():
 def the_price():
     """THIS SAVES THE PRICE"""
     while True:
-        price = raw_input("\nEnter the price: ") #This asks entered the pice
+        price = raw_input("\n--Enter the price: ") #This asks entered the pice
         try:
             price = float(price)
             return price
@@ -168,10 +170,12 @@ def list_of_products(list_products):
             price = PRODUCTS[each_product]
             print num_prudcts, each_product + "(s)", "a", ("Q%.2f c/u") % price
 
+#Test3 Gold Card
 def gold_card(subtotal):
     """THIS CALCULATES THE DISCOUNT OF THE GOLD CARD"""
     return subtotal * 0.05
 
+#Test4 Silver Card
 def silver_card(subtotal):
     """THIS CALCULATES THE DISCOUNT OF THE SILVER CARD"""
     return subtotal * 0.02
@@ -191,10 +195,12 @@ def discount_of_cards(subtotal):
     else:
         return 0
 
+#Test5 tax
 def tax(subtotal, discount):
     """THIS CALCULATES THE IVA"""
     return (subtotal - discount) * 0.12
 
+#Test6 My Total Final
 def my_total_final(subtotal, discount, iva):
     """THIS CALCULATES THE TOTAL FINAL"""
     return (subtotal - discount) + iva
@@ -207,19 +213,20 @@ def bill():
     total = my_total_final(subtotal, discount, iva) #This verifies the total final of the buy
     clear()
     list_of_products(EXISTENT)
-    print "\nThe subtotal is:            Q%.2f" % subtotal
-    print "The discount is:            Q%.2f" % discount
-    print "The tax is:                 Q%.2f" % iva
-    print "The total to pay is:        Q%.2f" % total
-    print "-------------------------------------"
-    print "\n\n---Thank you for your purchase!!---"
+    print "\n------------------------------------"
+    print "The subtotal is:            Q%.2f  " % subtotal
+    print "The discount is:            Q%.2f  " % discount
+    print "The tax is:                 Q%.2f  " % iva
+    print "The total to pay is:        Q%.2f  " % total
+    print "--------------------------------------"
+    print "\n\n---Thank you for your purchase!!---"   
     print "        ---Come back soon---           "
 
 def main_menu():
     """THIS SHOWS THE MAIN MENU"""
     print "___________________________________"
     print "| Welcome to the Register Machine  |"
-    print "|       1. Add and Item            |"
+    print "|       1. Add an Item             |"
     print "|       2. Sell Articles           |"
     print "|       3. Exit                    |"
     print "|__________________________________|"
@@ -236,9 +243,7 @@ def main_menu():
             clear()
             sys.exit()
         else:
-            clear()
             print "\nInvalid Option"
-            main_menu()
 
 if __name__ == "__main__":
     main_menu()
