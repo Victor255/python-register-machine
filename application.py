@@ -77,17 +77,17 @@ def articles_with_price():
     price = the_price()
     add_prod(product, price)
     while True:
-        other = raw_input("\nDo you want to insert other article? y/n ")
+        other = raw_input("\nDo you want to insert other article? yes/no ")
         other = other.lower()
-        if other == "y":
+        if other == "y" or other == "yes":
             product = valid_name()
             price = the_price()
             add_prod(product, price)
-        elif other == "n":
+        elif other == "n" or other == "no":
             clear()
             main_menu()
         else:
-            print "\nInsert only y/n please"
+            print "\nInsert only yes/no please"
 
 def product_sell():
     """THIS INSERTS THE PRODUCT TO BUY"""
@@ -124,13 +124,13 @@ def show_products():
 def ask_of_user():
     """THIS ASKS TO THE USER IF WANTS TO SEE THE PRODUCTS"""
     while True:
-        question = raw_input("Do you want to see the products available? y/n ")
+        question = raw_input("Do you want to see the products available? yes/no ")
         question = question.lower()
-        if question == "y":
+        if question == "y" or question == "yes":
             clear()
             show_products()
             sell_product()
-        elif question == "n":
+        elif question == "n" or question == "no":
             clear()
             sell_product()
         else:
@@ -219,7 +219,7 @@ def bill():
     print "The tax is:                 Q%.2f  " % iva
     print "The total to pay is:        Q%.2f  " % total
     print "--------------------------------------"
-    print "\n\n---Thank you for your purchase!!---"   
+    print "\n\n---Thank you for your purchase!!---"
     print "        ---Come back soon---           "
 
 def main_menu():
