@@ -77,7 +77,7 @@ def articles_with_price():
     price = the_price()
     add_prod(product, price)
     while True:
-        other = raw_input("\nDo you want to insert other article? yes/no ")
+        other = raw_input("\nDo you want to insert other article? yes/no: ")
         other = other.lower()
         if other == "y" or other == "yes":
             product = valid_name()
@@ -117,7 +117,7 @@ def sell_product():
 
 def show_products():
     """THIS SHOWS THE PRODUCTS IN SALE"""
-    print "The products available are"
+    print "The products available are:"
     for key, value in PRODUCTS.iteritems():
         print "%s: Q%.2f" % (key, value) #shows in screen the products available
 
@@ -134,7 +134,7 @@ def ask_of_user():
             clear()
             sell_product()
         else:
-            print "\nElection invalid"
+            print "\nElection invalid\n"
 
 def done():
     """THIS VERIFIES IF THE USER NOT BUYS"""
