@@ -38,7 +38,7 @@ def delete_lists():
     del PRICE[:]
     del CARDS[:]
 
-#Test 2 product isalpha
+#Test 2 minuscule
 def minuscule(product):
     """THIS CONVERTS THE PRODUCT IN MINUSCULE"""
     product = product.lower()
@@ -115,34 +115,12 @@ def sell_product():
         else:
             print "\nThis product is not available"
 
-def show_products():
-    """THIS SHOWS THE PRODUCTS IN SALE"""
-    print "The products available are:"
-    for key, value in PRODUCTS.iteritems():
-        print "%s: Q%.2f" % (key, value) #shows in screen the products available
-
-def ask_of_user():
-    """THIS ASKS TO THE USER IF WANTS TO SEE THE PRODUCTS"""
-    while True:
-        question = raw_input("Do you want to see the products available? yes/no ")
-        question = question.lower()
-        if question == "y" or question == "yes":
-            clear()
-            show_products()
-            sell_product()
-        elif question == "n" or question == "no":
-            clear()
-            sell_product()
-        else:
-            print "\nElection invalid\n"
-
 def done():
     """THIS VERIFIES IF THE USER NOT BUYS"""
     if EXISTENT == []:
         print "\nError has not made a purchase"
         press_enter()
         clear()
-        show_products()
         sell_product()
     else:
         clear()
@@ -160,7 +138,7 @@ def dic_next():
         clear()
         main_menu()
     else:
-        ask_of_user()
+        sell_product()
 
 def list_of_products(list_products):
     """THIS COUNTS EACH ITEM"""
